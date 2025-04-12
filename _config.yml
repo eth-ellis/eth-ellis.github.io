@@ -57,8 +57,8 @@ plugins:
 
 author:
   name   : "Ethan Ellis"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "To be added."
+  avatar : "/assets/images/bio-photo.png"
+  bio    : ".NET Developer with a grumpy cat"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"

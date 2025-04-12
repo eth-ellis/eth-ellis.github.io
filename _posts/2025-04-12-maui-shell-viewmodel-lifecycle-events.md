@@ -28,7 +28,7 @@ As a result, many different approaches are commonly suggested, including:
 However, these can all have their own drawbacks without customisation.
 
 > **Example**<br>
-> Determining whether `Page.OnNavigatedTo` was fired from switching tabs or navigating backwards, to fire a re-initialise method.
+> Determining whether `Page.OnNavigatedTo` was fired by switching tabs or navigating backwards, to fire a re-initialise method.
 
 ## A pretty nice solution
 
@@ -53,8 +53,8 @@ The below approach uses the `ShellNavigatedEventArgs.Source` property within `Sh
 - `ShellNavigationSource.ShellItemChanged` is fired when navigating to a root page.
 
     This happens when:
-    - the app launches, and the first page is opened
-    - navigating to a different root page using `Shell.Curent.GoToAsync("//Route")`
+    - the app launches and the first page is opened
+    - navigating to a different root page using `Shell.Current.GoToAsync("//Route")`
     - navigating to a different flyout item<br><br>
 
 - `ShellNavigationSource.ShellSectionChanged` is fired when switching tabs.
@@ -165,7 +165,7 @@ public class NavigationService : INavigationService
 
 ## Current limitations
 
-When navigating to a root page using global routes (`//Route`), `ApplyQueryAttributes` is fired after `Shell.OnNavigated`/`virtual BaseViewModel.InitialiseAsync`.
+When navigating to a root page using global routes, `ApplyQueryAttributes` is fired after `Shell.OnNavigated` > `BaseViewModel.InitialiseAsync`.
 
 This is caused by<br>
 [dotnet/maui Issue 24241 - Maui Shell weird navigation issue with timing of ApplyQueryAttributes and Page Lifecycle](https://github.com/dotnet/maui/issues/24241).
