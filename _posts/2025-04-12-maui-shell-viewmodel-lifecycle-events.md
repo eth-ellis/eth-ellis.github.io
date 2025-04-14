@@ -46,6 +46,8 @@ What does a nice solution look like?
 
 4. The solution should use the existing Shell parameter passing system for forwards, backwards and root navigation.
 
+5. The solution should work on Android, iOS, macOS and Windows.
+
 ### Implementation
 
 The below approach uses the `ShellNavigatedEventArgs.Source` property within `Shell.OnNavigated` to determine which ViewModel lifecycle event to run:
@@ -177,6 +179,8 @@ This will hopefully be fixed in a future .NET MAUI release.
 The below video showcases a sample app implementing our approach for ViewModel initialisation and reinitialisation.
 
 It covers scenarios including normal, modal, and root navigation, as well as passing navigation data in each case.
+
+These results are consistent across Android, iOS, macOS and Windows.
 
 <video width="100%" controls>
   <source src="/assets/videos/Chill-Weather-Showcase.mp4" type="video/mp4">
